@@ -17,10 +17,6 @@
     Checking if you have something in the fridge
 */
 
-function fridgeContains(fridge, item) {
-  return fridge.includes(item);
-}
-
 /* 
    -------TESTS---------------------------------------------------------------
    Run these commands to make sure you did it right. They should all be true.
@@ -51,14 +47,6 @@ console.log(!fridgeContains(fridge, "eggplant"));
     If the fridge already contains the item, don't add another!
     Hint: That means you will have to check if an item is in the fridge first!
 */
-
-function putItemIntoFridge(fridge, item) {
-  if (fridge.length > 0 && fridge[0] == item) {
-    return fridge.includes(item);
-  } else {
-    return fridge.push(item);
-  }
-}
 
 /* 
    -------TESTS---------------------------------------------------------------
@@ -95,14 +83,6 @@ console.log(fridge2.length == previousLength + 1 && fridge2.includes("kale"));
     if it doesn't exist in the fridge, then return null;
   
 */
-function getItemFromFridge(fridge3, item) {
-  if (fridge3.length > 0 && fridge3[0] == item) {
-    fridge.splice(item);
-  } else {
-    return null;
-  }
-}
-
 /* 
    -------TESTS---------------------------------------------------------------
    Run these commands to make sure you did it right. They should all be true.
@@ -207,19 +187,6 @@ function getIndexOfItem(fridge, item) {
     If that was the last of that item, remove the empty array for that item.
     If the item isn't in the fridge, return null.
 */
-function getItemFromNewFridge(fridge, item) {
-  let itemIndex = getIndexOfItem(fridge, item);
-  if (itemIndex !== -1) {
-    fridge[itemIndex].pop();
-  }
-
-  if (fridge[itemIndex].length === 0) {
-    fridge.splice(itemIndex, 1);
-    return item;
-  } else {
-    return null;
-  }
-}
 
 // If that was the last of that item, remove the empty array for that item.
 
