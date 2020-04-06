@@ -209,16 +209,15 @@ function getIndexOfItem(fridge, item) {
     If the item isn't in the fridge, return null.
 */
 function getItemFromNewFridge(fridge, item) {
-  let itemIndex = getIndexOfItem(fridge, item);
+  const itemIndex = getIndexOfItem(fridge, item);
   if (itemIndex !== -1) {
     fridge[itemIndex].pop();
-  }
-
-  if (fridge[itemIndex].length === 0) {
-    fridge.splice(itemIndex, 1);
-    return item;
-  } else {
-    return null;
+    if (fridge[itemIndex].length === 0) {
+      fridge.splice(itemIndex, 1);
+      return item;
+    } else {
+      return null;
+    }
   }
 }
 
@@ -235,7 +234,7 @@ function putItemInNewFridge(fridge, item) {
   if (itemIndex !== -1) {
     fridge[itemIndex].push(item);
   } else {
-    fridge.push([]);
+    fridge.push([item]);
   }
 }
 
