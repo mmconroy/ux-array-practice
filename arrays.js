@@ -95,10 +95,11 @@ console.log(fridge2.length == previousLength + 1 && fridge2.includes("kale"));
     if it doesn't exist in the fridge, then return null;
   
 */
-function getItemFromFridge(fridge3, item) {
-  let itemIndex = getIndexOfItem(fridge3, item);
-  if (itemIndex !== -1) {
-    fridge3[itemIndex].pop();
+function getItemFromFridge(fridge, item) {
+  let itemIndex = fridge.indexOf(item);
+  if (fridge.includes(item)) {
+    fridge.splice(itemIndex, 1);
+    return item;
   } else {
     return null;
   }
