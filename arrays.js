@@ -96,8 +96,9 @@ console.log(fridge2.length == previousLength + 1 && fridge2.includes("kale"));
   
 */
 function getItemFromFridge(fridge3, item) {
-  if (fridge3.length > 0 && fridge3[0] == item) {
-    fridge.splice(item);
+  let itemIndex = getIndexOfItem(fridge3, item);
+  if (itemIndex !== -1) {
+    fridge3[itemIndex].pop();
   } else {
     return null;
   }
